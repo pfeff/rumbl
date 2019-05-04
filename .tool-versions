@@ -1,0 +1,4 @@
+postgres 11.2
+elixir 1.8.1
+erlang 21.3.6
+nodejs 11.7.0
