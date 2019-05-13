@@ -14,10 +14,10 @@ let Video = {
 
   onReady(videoId, socket) {
     let msgContainer = document.getElementById("msg-container")
-    let msgInput = document.getElementById("msg-input")
-    let postButton = document.getElementById("msg-submit")
-    let lastSeenId = 0
-    let vidChannel = socket.channel("videos:" + videoId, () => {
+    let msgInput     = document.getElementById("msg-input")
+    let postButton   = document.getElementById("msg-submit")
+    let lastSeenId   = 0
+    let vidChannel   = socket.channel("videos:" + videoId, ()   => {
       return {last_seen_id: lastSeenId}
     })
 
