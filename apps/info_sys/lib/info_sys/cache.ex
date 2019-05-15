@@ -31,7 +31,6 @@ defmodule InfoSys.Cache do
 
   def handle_info(:clear, state) do
     :ets.delete_all_objects(state.table)
-    IO.puts("Cleared cache")
     {:noreply, schedule_clear(state)}
   end
 
