@@ -12,12 +12,13 @@ defmodule InfoSys.Wolfram do
 
   @impl true
   def compute(query_str, _opts) do
-    query_str
+    results = query_str
     |> fetch_xml()
     |> xpath(~x"/queryresult/pod[contains(@title, 'Result') or
                                  contains(@title, 'Definitions')]
                             /subpod/plaintext/text()")
     |> build_results()
+    results
   end
 
   defp build_results(nil), do: []
